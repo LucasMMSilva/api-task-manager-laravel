@@ -10,7 +10,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return response()->json(Category::all());
+        $categories = Category::paginate(10);
+        return response()->json($categories);
     }
 
     public function store(Request $request)
@@ -62,14 +63,14 @@ class CategoryController extends Controller
     }
 
     public function tasks($id)
-    {
-        $category = Category::findOrFail($id);
+{
+    $category = Category::findOrFail($id);
 
-        $tasks = $category->tasks()
-            ->where('user_id', Auth::id())
-            ->with('category')
-            ->get();
+    $tasks = $category->tasks()
+        ->where('user_id', Auth::id())
+        ->with('category')
+        ->paginate(10);
 
-        return response()->json($tasks);
-    }
+    return response()->json($tasks);
+}
 }

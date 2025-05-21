@@ -10,7 +10,8 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return response()->json(data: Auth::user()->tasks()->with('category')->get());
+        $tasks = Auth::user()->tasks()->with('category')->paginate(10); 
+        return response()->json($tasks);
     }
 
     public function store(Request $request)
