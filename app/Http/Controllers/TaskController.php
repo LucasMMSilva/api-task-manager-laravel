@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,8 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Auth::user()->tasks()->with('category')->paginate(10); 
+        $user = User::find(Auth::user()->id);
+        $tasks = $user->tasks()->with('category')->paginate(10); 
         return response()->json($tasks);
     }
 
@@ -41,13 +43,15 @@ class TaskController extends Controller
 
     public function show($id)
     {
-        $task = Auth::user()->tasks()->with('category')->findOrFail($id);
+        $user = User::find(Auth::user()->id);
+        $task = $user->tasks()->with('category')->findOrFail($id);
         return response()->json($task);
     }
 
     public function update(Request $request, $id)
     {
-        $task = Auth::user()->tasks()->findOrFail($id);
+        $user = User::find(Auth::user()->id);
+        $task = $user->tasks()->findOrFail($id);
 
         $request->validate([
             'title' => 'sometimes|string|max:255',
@@ -67,7 +71,8 @@ class TaskController extends Controller
 
     public function destroy($id)
     {
-        $task = Auth::user()->tasks()->findOrFail($id);
+        $user = User::find(Auth::user()->id);
+        $task = $user->tasks()->findOrFail($id);
         $task->delete();
 
         return response()->json(['message' => 'Task deleted']);
