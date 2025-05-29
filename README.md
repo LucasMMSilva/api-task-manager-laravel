@@ -1,7 +1,7 @@
 # API - Task Manager
-Esta API foi desenvolvida como parte de uma atividade prática do curso de Sistemas de Informação da UNIFACOL – Centro Universitário Facol. O objetivo é aplicar os conhecimentos adquiridos em sala de aula na criação de uma interface de programação.
-
 **Equipe:** Lucas Manoel, Eliabe Henrique, Filipe Vinicius, Cláudio Gabriel, Josenildo Damacena, Alison Ferreira, Antônio Carlos.
+
+Esta API foi desenvolvida como parte de uma atividade prática do curso de Sistemas de Informação da UNIFACOL – Centro Universitário Facol. O objetivo é aplicar os conhecimentos adquiridos em sala de aula na criação de uma interface de programação.
 
 
 ## Autenticação
