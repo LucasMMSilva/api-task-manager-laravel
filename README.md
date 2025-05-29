@@ -1,10 +1,12 @@
 # API - Task Manager
 Esta API foi desenvolvida como parte de uma atividade prática do curso de Sistemas de Informação da UNIFACOL – Centro Universitário Facol. O objetivo é aplicar os conhecimentos adquiridos em sala de aula na criação de uma interface de programação.
 
+**Equipe:** Lucas Manoel, Eliabe Henrique, Filipe Vinicius, Cláudio Gabriel, Josenildo Damacena, Alison Ferreira, Antônio Carlos.
+
+
 ## Autenticação
 ### Registrar
 **POST** `/api/register`
-
 **Body** 
 ```json
 {
@@ -29,7 +31,6 @@ Resposta **201 Created**:
 
 ### Login
 **POST** `/api/login`
-
 **Body**
 ```json
 {
@@ -53,19 +54,18 @@ Resposta **200 OK**:
 **POST** `/api/logout`
 **Headers:**
 Authorization: Bearer {token}
-
 Resposta **200 OK**:
 ```json
 {
   "message": "Logout realizado com sucesso."
 }
 ```
+
 ## Usuário Atual
 ### Obter dados do usuário autenticado
 **GET** `/api/user`
 **Headers:**
 Authorization: Bearer {token}
-
 Resposta **200 OK**:`
 ```json
 {
@@ -76,13 +76,13 @@ Resposta **200 OK**:`
 }
 ```
 
+
 ## Categorias
 ### Criar categoria
 **POST** `/api/categories`
 
 Headers:
 Authorization: Bearer {token}
-
 **Body**
 
 ```json
@@ -104,7 +104,6 @@ Resposta **201 Created**:
 **GET** `/api/categories`
 **Headers:**
 Authorization: Bearer {token}
-
 Resposta **200 OK**:
 ```json
 [
@@ -127,9 +126,7 @@ Resposta **200 OK**:
 **GET** `/api/categories/{id}`
 Headers:
 Authorization: Bearer {token}
-
 Resposta **200 OK**:
-
 ```json
 {
   "id": 1,
@@ -141,10 +138,8 @@ Resposta **200 OK**:
 
 ### Atualizar categoria
 **PUT** `/api/categories/{id}`
-
 Headers:
 Authorization: Bearer {token}
-
 **Body**
 ```json
 {
@@ -165,14 +160,12 @@ Resposta **200 OK**:
 **DELETE** `/api/categories/{id}`
 Headers:
 Authorization: Bearer {token}
-
 Resposta **204 No Content**:
 
 ### Listar tarefas por categoria
 **GET** `/api/categories/{id}/tasks`
 Headers:
 Authorization: Bearer {token}
-
 Resposta **200 OK**:
 ```json
 [
@@ -186,12 +179,12 @@ Resposta **200 OK**:
 ]
 ```
 
+
 ## Tarefas (Tasks)
 ### Criar tarefa
 **POST** ´/api/tasks´
 Headers:
 Authorization: Bearer {token}
-
 **Body**
 ```json
 {
@@ -217,7 +210,6 @@ Resposta **201 Created**:
 **GET** `/api/tasks`
 Headers:
 Authorization: Bearer {token}
-
 Resposta **200 OK**:
 ```json
 [
@@ -250,9 +242,7 @@ Resposta **200 OK**:
 **GET** `/api/tasks/{id}`
 Headers:
 Authorization: Bearer {token}
-
 Resposta **200 OK**:
-
 ```json
 {
   "id": 12,
@@ -269,7 +259,6 @@ Resposta **200 OK**:
 **PUT** `/api/tasks/{id}`
 Headers:
 Authorization: Bearer {token}
-
 **Body** (campos opcionais)
 ```json
 {
@@ -295,5 +284,4 @@ Resposta **200 OK**:
 **DELETE** `/api/tasks/{id}`
 Headers:
 Authorization: Bearer {token}
-
 Resposta **204 No Content**:
