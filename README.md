@@ -8,6 +8,7 @@ Esta API foi desenvolvida como parte de uma atividade prática do curso de Siste
 ## Autenticação
 ### Registrar
 **POST** `/api/register`
+
 **Body** 
 ```json
 {
@@ -17,6 +18,7 @@ Esta API foi desenvolvida como parte de uma atividade prática do curso de Siste
   "password_confirmation": "12345678"
 }
 ```
+
 Resposta **201 Created**:
 ```json
 {
@@ -32,6 +34,7 @@ Resposta **201 Created**:
 
 ### Login
 **POST** `/api/login`
+
 **Body**
 ```json
 {
@@ -53,8 +56,11 @@ Resposta **200 OK**:
 
 ### Logout
 **POST** `/api/logout`
+
 **Headers:**
+
 Authorization: Bearer {token}
+
 Resposta **200 OK**:
 ```json
 {
@@ -64,9 +70,13 @@ Resposta **200 OK**:
 
 ## Usuário Atual
 ### Obter dados do usuário autenticado
+
 **GET** `/api/user`
+
 **Headers:**
+
 Authorization: Bearer {token}
+
 Resposta **200 OK**:`
 ```json
 {
@@ -83,9 +93,10 @@ Resposta **200 OK**:`
 **POST** `/api/categories`
 
 Headers:
-Authorization: Bearer {token}
-**Body**
 
+Authorization: Bearer {token}
+
+**Body**
 ```json
 {
   "name": "Estudos"
@@ -103,8 +114,11 @@ Resposta **201 Created**:
 
 ### Listar todas as categorias
 **GET** `/api/categories`
+
 **Headers:**
+
 Authorization: Bearer {token}
+
 Resposta **200 OK**:
 ```json
 [
@@ -125,8 +139,11 @@ Resposta **200 OK**:
 
 ### Detalhar uma categoria
 **GET** `/api/categories/{id}`
+
 Headers:
+
 Authorization: Bearer {token}
+
 Resposta **200 OK**:
 ```json
 {
@@ -139,8 +156,11 @@ Resposta **200 OK**:
 
 ### Atualizar categoria
 **PUT** `/api/categories/{id}`
+
 Headers:
+
 Authorization: Bearer {token}
+
 **Body**
 ```json
 {
@@ -159,14 +179,20 @@ Resposta **200 OK**:
 
 ### Deletar categoria
 **DELETE** `/api/categories/{id}`
+
 Headers:
+
 Authorization: Bearer {token}
+
 Resposta **204 No Content**:
 
 ### Listar tarefas por categoria
 **GET** `/api/categories/{id}/tasks`
+
 Headers:
+
 Authorization: Bearer {token}
+
 Resposta **200 OK**:
 ```json
 [
@@ -184,8 +210,11 @@ Resposta **200 OK**:
 ## Tarefas (Tasks)
 ### Criar tarefa
 **POST** ´/api/tasks´
+
 Headers:
+
 Authorization: Bearer {token}
+
 **Body**
 ```json
 {
@@ -209,8 +238,11 @@ Resposta **201 Created**:
 
 ### Listar tarefas
 **GET** `/api/tasks`
+
 Headers:
+
 Authorization: Bearer {token}
+
 Resposta **200 OK**:
 ```json
 [
@@ -241,8 +273,11 @@ Resposta **200 OK**:
 
 ### Detalhar uma tarefa
 **GET** `/api/tasks/{id}`
+
 Headers:
+
 Authorization: Bearer {token}
+
 Resposta **200 OK**:
 ```json
 {
@@ -258,8 +293,11 @@ Resposta **200 OK**:
 
 ### Atualizar tarefa
 **PUT** `/api/tasks/{id}`
+
 Headers:
+
 Authorization: Bearer {token}
+
 **Body** (campos opcionais)
 ```json
 {
@@ -283,6 +321,9 @@ Resposta **200 OK**:
 
 ### Deletar tarefa
 **DELETE** `/api/tasks/{id}`
+
 Headers:
+
 Authorization: Bearer {token}
+
 Resposta **204 No Content**:
